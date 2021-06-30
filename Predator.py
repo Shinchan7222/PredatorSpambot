@@ -459,12 +459,12 @@ async def spam(e):
         if len(predator) == 2:
             message = str(predator[1])
             counter = int(predator[0])
-            if counter > 1000:
+            if counter > 10000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             await asyncio.wait([e.respond(message) for i in range(counter)])
         elif e.reply_to_msg_id and smex.media:  
             counter = int(predator[0])
-            if counter > 1000:
+            if counter > 10000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             for _ in range(counter):
                 smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
@@ -472,7 +472,7 @@ async def spam(e):
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(predator[0])
-            if counter > 1000:
+            if counter > 10000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
