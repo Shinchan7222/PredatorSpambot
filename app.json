@@ -72,6 +72,11 @@
         "description": "Sudo Users Id",
         "value": "",
         "required": true
+      },
+      "SUDO_HANDLER": {
+        "description": "for sudo handler 😌",
+        "value": "",
+        "required": false
       }
   },
   "addons": [{
