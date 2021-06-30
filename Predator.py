@@ -528,6 +528,35 @@ async def spam(e):
             await e.reply(usage, parse_mode=None, link_preview=None )
 
 
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.bspam"))
+async def spammer(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        message = e.text
+        counter = int(message[7:11])
+        spam_message = str(e.text[12:])
+        rd = int(counter % 100)
+        tot = int((counter - rd )/100)
+        a= 30
+        for q in range(tot):
+            for p in range(100):
+                await asyncio.wait([e.respond(spam_message)])
+            a = a +2
+            await asyncio.sleep(a)
+
+        await e.delete()
+        await e.client.send_message(
+            lg_id, f"#SPAM \n\nSpammed  {counter}  messages!!"
+        )
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
